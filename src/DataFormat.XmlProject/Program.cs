@@ -8,7 +8,7 @@ namespace DataFormat.XmlProject
         {
             Console.WriteLine("Hello World!");
 
-            WriteXmlToDoc(new Personal { Id = 1, Name = "Martin", SurName = "Fowler" }, @"D:\dotnet\.NetProject\Net53.DataExchangeFormat\src\DataFormat2.XmlProject\Document2.xml");
+            WriteXmlToDoc(new Personal { Id = 1, Name = "Martin", SurName = "Fowler" }, @"D:\dotnet\.NetProject\Net53.DataExchangeFormat\src\DataFormat.XmlProject\Document4.xml");
 
 
         }
@@ -23,13 +23,12 @@ namespace DataFormat.XmlProject
 
             xml.WriteStartElement("personal");
             xml.WriteAttributeString("Id", personal.Id.ToString());
-         
+            
             xml.WriteElementString("Ad",personal.Name);
-            xml.WriteEndElement();
+            
 
             xml.WriteElementString("Soyad", personal.SurName);
-            xml.WriteEndElement();
-
+           
 
             xml.WriteEndElement();
 
