@@ -8,7 +8,7 @@ namespace DataFormat.XmlProject
         {
             Console.WriteLine("Hello World!");
 
-            WriteXmlToDoc(new Personal { Id = 1, Name = "Martin", SurName = "Fowler" }, @"D:\dotnet\.NetProject\Net53.DataExchangeFormat\src\DataFormat.XmlProject\Document4.xml");
+            WriteXmlToDoc(new Personal { Id = 1, Name = "Martin", SurName = "Fowler" }, @".\your\path");
 
 
         }
