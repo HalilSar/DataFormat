@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Xml;
+using System.Collections.Generic;
 namespace DataFormat.XmlProject
 {
     class Program
@@ -8,8 +9,11 @@ namespace DataFormat.XmlProject
         {
             Console.WriteLine("Hello World!");
 
-            WriteXmlToDoc(new Personal { Id = 1, Name = "Martin", SurName = "Fowler" }, @".\your\path");
+            //WriteXmlToDoc(new Personal { Id = 1, Name = "Martin", SurName = "Fowler" }, @".\your\path");
 
+            WriteXmlToDoc(new List<Personal> { new Personal { Id = 1, Name = "Martin", SurName = "Fowler" },
+                                               new Personal { Id = 2, Name = "Goerge", SurName = "Bool" },
+                                               new Personal { Id = 3, Name = "Goerge", SurName = "Leibniz" }}, @".\your\path");
 
         }
 
@@ -34,5 +38,30 @@ namespace DataFormat.XmlProject
 
             xml.Close();
         }
+    
+        static void WriteXmlToDoc(List<Personal> persons, string path)
+        {
+            var xml  = XmlWriter.Create(path);
+            xml.WriteStartDocument(true);
+            xml.WriteStartElement("Personeller");
+            
+            foreach (var personal in persons)
+            {
+                xml.WriteStartElement("personal");
+                xml.WriteAttributeString("Id", personal.Id.ToString());
+
+                xml.WriteElementString("Ad", personal.Name);
+
+
+                xml.WriteElementString("Soyad", personal.SurName);
+
+
+                xml.WriteEndElement();
+            }
+
+            xml.WriteEndElement();
+            xml.Close();
+        }
+
     }
 }
