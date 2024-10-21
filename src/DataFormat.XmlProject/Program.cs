@@ -7,15 +7,18 @@ namespace DataFormat.XmlProject
     {
         static void Main(string[] args)
         {
-            string path = @"D:\dotnet\.NetProject\Net53.DataExchangeFormat\src\DataFormat.XmlProject\D2.xml";
-            //Console.WriteLine("Hello World!");
+            string path = @".\your\path\demo.xml";
+            string path2 = @".\your\path\demo2.xml";
 
-            //WriteXmlToDoc(new Personal { Id = 1, Name = "Martin", SurName = "Fowler" }, path);  @".\your\path"
+            WriteXmlToDoc(new Personal { Id = 1, Name = "Martin", SurName = "Fowler" }, path);
 
             WriteXmlToDoc(new List<Personal> { new Personal { Id = 1, Name = "Martin", SurName = "Fowler" },
                                                new Personal { Id = 2, Name = "Goerge", SurName = "Bool" },
-                                               new Personal { Id = 3, Name = "Goerge", SurName = "Leibniz" }}, path);
+                                               new Personal { Id = 3, Name = "Goerge", SurName = "Leibniz" }}, path2);
             ReadXml(path);
+            Console.WriteLine("******************************");
+            ReadXml(path2);
+
         }
 
 
