@@ -63,5 +63,14 @@ namespace DataFormat.XmlProject
             xml.Close();
         }
 
+        static void ReadXml(string path)
+        {
+            var xmlreader = XmlReader.Create(path);
+            while(xmlreader.Read())
+            {
+                 Console.WriteLine(xmlreader.Name + " " + xmlreader.Value);
+            }
+            xmlreader.Close();
+        }
     }
 }
