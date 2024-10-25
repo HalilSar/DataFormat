@@ -13,13 +13,17 @@ namespace DataFormat.JsonProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //Console.WriteLine("Hello World!");
+            string path = @".\your\path\demo.xml";
+            WriteJson(new Personal { Id = 1, Name = "Martin", SurName = "Fowler" }, path);
         }
 
 
-        static void WriteJson(string value,string path)
+        static void WriteJson(Personal personal,string path)
         {
-          //  var 
+            var obj = Newtonsoft.Json.JsonConvert.SerializeObject(personal);
+            File.WriteAllText(path, obj);
+
         }
     }
 }
