@@ -1,6 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 using System.IO;
+using System.Collections.Generic;
 namespace DataFormat.JsonProject
 {
     public class Personal
@@ -22,6 +23,13 @@ namespace DataFormat.JsonProject
         static void WriteJson(Personal personal,string path)
         {
             var obj = Newtonsoft.Json.JsonConvert.SerializeObject(personal);
+            File.WriteAllText(path, obj);
+
+        }
+
+        static void WriteJson(List<Personal> personals, string path)
+        {
+            var obj = Newtonsoft.Json.JsonConvert.SerializeObject(personals);
             File.WriteAllText(path, obj);
 
         }
