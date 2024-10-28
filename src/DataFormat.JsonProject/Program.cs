@@ -27,15 +27,20 @@ namespace DataFormat.JsonProject
 
         static void WriteJson(Personal personal,string path)
         {
-            var obj = Newtonsoft.Json.JsonConvert.SerializeObject(personal);
+            var obj = JsonConvert.SerializeObject(personal);
             File.WriteAllText(path, obj);
 
         }
 
         static void WriteJson(List<Personal> personals, string path)
         {
-            var obj = Newtonsoft.Json.JsonConvert.SerializeObject(personals);
+            var obj = JsonConvert.SerializeObject(personals);
             File.WriteAllText(path, obj);
+
+        }
+
+        static void ReadJson(string path)
+        {
 
         }
     }
