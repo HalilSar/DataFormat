@@ -39,8 +39,23 @@ namespace DataFormat.JsonProject
 
         }
 
-        static void ReadJson(string path)
+        static void ReadJson(string path) 
         {
+            var obj = JsonConvert.DeserializeObject<Personal>(path);
+            Console.WriteLine(obj.Id);
+            Console.WriteLine(obj.Name);
+            Console.WriteLine(obj.SurName);
+        }
+
+        static void ReadJsonObjects(string path)
+        {
+            var objs = JsonConvert.DeserializeObject<List<Personal>>(path);
+            foreach (var obj in objs)
+            {
+                Console.WriteLine(obj.Id);
+                Console.WriteLine(obj.Name);
+                Console.WriteLine(obj.SurName);
+            }
 
         }
     }
