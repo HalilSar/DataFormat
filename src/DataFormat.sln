@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataFormat.XmlProject", "DataFormat.XmlProject\DataFormat.XmlProject.csproj", "{D146CB73-4E1D-44F5-8EA9-9C18DE5F6D20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataFormat.JsonProject", "DataFormat.JsonProject\DataFormat.JsonProject.csproj", "{F0FFF54B-1EB1-4FCC-9D34-A9D147454B7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataFormat.JsonProject", "DataFormat.JsonProject\DataFormat.JsonProject.csproj", "{F0FFF54B-1EB1-4FCC-9D34-A9D147454B7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataFormat.CsvProject", "DataFormat.CsvProject\DataFormat.CsvProject.csproj", "{6D1E8980-C0F8-4C0E-BB98-51C7ECFECBD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F0FFF54B-1EB1-4FCC-9D34-A9D147454B7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0FFF54B-1EB1-4FCC-9D34-A9D147454B7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0FFF54B-1EB1-4FCC-9D34-A9D147454B7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D1E8980-C0F8-4C0E-BB98-51C7ECFECBD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D1E8980-C0F8-4C0E-BB98-51C7ECFECBD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D1E8980-C0F8-4C0E-BB98-51C7ECFECBD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D1E8980-C0F8-4C0E-BB98-51C7ECFECBD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
