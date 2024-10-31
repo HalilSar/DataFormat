@@ -1,5 +1,7 @@
 ﻿using System;
-
+using static System.Console;
+using CsvHelper;
+using System.IO;
 namespace DataFormat.CsvProject
 {
     public class Personal
@@ -12,7 +14,17 @@ namespace DataFormat.CsvProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            WriteLine("Hello World!");
         }
+
+        static void CreateCsv(string path, Personal personal)
+        {
+            StreamWriter sw = new StreamWriter(path);
+            CsvWriter csvWriter = new CsvWriter(sw);
+            csvWriter.WriteHeader(typeof(Personal));
+            csvWriter.WriteRecords(personal);
+            sw.Close();
+        }
+
     }
 }
