@@ -14,15 +14,17 @@ namespace DataFormat.CsvProject
     {
         static void Main(string[] args)
         {
-            WriteLine("Hello World!");
+            string path = @".\your\path\data2.csv";          
+            WriteCsv( path,new Personal { Id = 1, Name = "Martin", SurName = "Fowler" });
         }
 
-        static void CreateCsv(string path, Personal personal)
+        static void WriteCsv(string path, Personal personal)
         {
+           
             StreamWriter sw = new StreamWriter(path);
             CsvWriter csvWriter = new CsvWriter(sw);
             csvWriter.WriteHeader(typeof(Personal));
-            csvWriter.WriteRecords(personal);
+            csvWriter.WriteRecord(personal);
             sw.Close();
         }
 
