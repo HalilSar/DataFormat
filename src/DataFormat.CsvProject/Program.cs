@@ -22,7 +22,7 @@ namespace DataFormat.CsvProject
         {
            
             StreamWriter sw = new StreamWriter(path);
-            CsvWriter csvWriter = new CsvWriter(sw);
+            CsvWriter csvWriter = new CsvWriter(sw,System.Globalization.CultureInfo.InvariantCulture);
             csvWriter.WriteHeader(typeof(Personal));
             csvWriter.WriteRecord(personal);
             sw.Close();
