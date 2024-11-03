@@ -38,7 +38,7 @@ namespace DataFormat.CsvProject
             using (CsvWriter csvWriter = new CsvWriter(sw, System.Globalization.CultureInfo.InvariantCulture))
             {
                 csvWriter.WriteHeader<List<Personal>>();
-                csvWriter.WriteRecord(personals);
+                csvWriter.WriteRecords(personals);
             }
             sw.Close();
         }
