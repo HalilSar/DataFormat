@@ -32,5 +32,16 @@ namespace DataFormat.CsvProject
             sw.Close();
         }
 
+        static void WriteObjectsCsv(string path, List<Personal> personals)
+        {
+            StreamWriter sw = new StreamWriter(path);
+            using (CsvWriter csvWriter = new CsvWriter(sw, System.Globalization.CultureInfo.InvariantCulture))
+            {
+                csvWriter.WriteHeader<List<Personal>>();
+                csvWriter.WriteRecord(personals);
+            }
+            sw.Close();
+        }
+
     }
 }
