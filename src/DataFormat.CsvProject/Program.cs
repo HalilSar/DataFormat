@@ -14,14 +14,15 @@ namespace DataFormat.CsvProject
     class Program
     {
         static void Main(string[] args)          
-        { 
-            string path = @".\your\path\data.csv";
-            string path2 = @".\your\path\data2.csv";
+        {
+            string path =  @".\your\path\data.csv";
+            string path2 = @".\your\path\data2.csv"; 
 
             WriteCsv(path, new Personal { Id = 1, Name = "Martin", SurName = "Fowler" });
-            WriteObjectsCsv(path2,new List<Personal> { new Personal { Id = 1, Name = "Martin", SurName = "Fowler" },
+            WriteObjectsCsv(path2, new List<Personal> { new Personal { Id = 1, Name = "Martin", SurName = "Fowler" },
                                                new Personal { Id = 2, Name = "Goerge", SurName = "Bool" },
                                                new Personal { Id = 3, Name = "Goerge", SurName = "Leibniz" }});
+            ReadCsv(path);
         }
 
         static void WriteCsv(string path, Personal personal)
@@ -52,10 +53,13 @@ namespace DataFormat.CsvProject
             StreamReader sr = new StreamReader(path);
             using (CsvReader reader = new CsvReader(sr, System.Globalization.CultureInfo.InvariantCulture))
             {
-                var obj = reader.GetRecord<Personal>();
-                WriteLine(obj.Name);
-                WriteLine(obj.SurName);
+                    reader.Read();
+                    var obj = reader.GetRecord<Personal>();
+                    WriteLine(obj.Name);
+                    WriteLine(obj.SurName);
+
             }
+            sr.Close();
         }
 
     }
