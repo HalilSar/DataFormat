@@ -47,5 +47,16 @@ namespace DataFormat.CsvProject
             sw.Close();
         }
 
+        static void ReadCsv(string path)
+        {
+            StreamReader sr = new StreamReader(path);
+            using (CsvReader reader = new CsvReader(sr, System.Globalization.CultureInfo.InvariantCulture))
+            {
+                var obj = reader.GetRecord<Personal>();
+                WriteLine(obj.Name);
+                WriteLine(obj.SurName);
+            }
+        }
+
     }
 }
