@@ -31,7 +31,9 @@ namespace DataFormat.CsvProject
             StreamWriter sw = new StreamWriter(path);
             using (CsvWriter csvWriter = new CsvWriter(sw, System.Globalization.CultureInfo.InvariantCulture))
             {
+          
                 csvWriter.WriteHeader<Personal>();
+                csvWriter.NextRecord();
                 csvWriter.WriteRecord(personal);
             }
             sw.Close();
