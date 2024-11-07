@@ -15,8 +15,8 @@ namespace DataFormat.CsvProject
     {
         static void Main(string[] args)          
         {
-            string path =  @".\your\path\data.csv";
-            string path2 = @".\your\path\data2.csv"; 
+            string path =  @".\your\path\data.csv";  //
+            string path2 =  @".\your\path\data2.csv";
 
             WriteCsv(path, new Personal { Id = 1, Name = "Martin", SurName = "Fowler" });
             WriteObjectsCsv(path2, new List<Personal> { new Personal { Id = 1, Name = "Martin", SurName = "Fowler" },
@@ -31,7 +31,9 @@ namespace DataFormat.CsvProject
             StreamWriter sw = new StreamWriter(path);
             using (CsvWriter csvWriter = new CsvWriter(sw, System.Globalization.CultureInfo.InvariantCulture))
             {
+          
                 csvWriter.WriteHeader<Personal>();
+                csvWriter.NextRecord();
                 csvWriter.WriteRecord(personal);
             }
             sw.Close();
@@ -43,6 +45,7 @@ namespace DataFormat.CsvProject
             using (CsvWriter csvWriter = new CsvWriter(sw, System.Globalization.CultureInfo.InvariantCulture))
             {
                 csvWriter.WriteHeader<Personal>();
+                csvWriter.NextRecord();
                 csvWriter.WriteRecords(personals);
             }
             sw.Close();
