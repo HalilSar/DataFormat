@@ -3,6 +3,8 @@ using static System.Console;
 using CsvHelper;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+
 namespace DataFormat.CsvProject
 {
     public class Personal
@@ -15,7 +17,7 @@ namespace DataFormat.CsvProject
     {
         static void Main(string[] args)          
         {
-            string path = @".\your\path\data.csv";  //
+            string path = @".\your\path\data.csv"; 
             string path2 =  @".\your\path\data2.csv";
 
             WriteCsv(path, new Personal { Id = 1, Name = "Martin", SurName = "Fowler" });
@@ -23,6 +25,7 @@ namespace DataFormat.CsvProject
                                                new Personal { Id = 2, Name = "Goerge", SurName = "Bool" },
                                                new Personal { Id = 3, Name = "Goerge", SurName = "Leibniz" }});
             ReadCsv(path);
+            ReadObjectsCsv(path2);
         }
 
         static void WriteCsv(string path, Personal personal)
@@ -70,9 +73,8 @@ namespace DataFormat.CsvProject
             StreamReader sr = new StreamReader(path);
             using (CsvReader reader = new CsvReader(sr, System.Globalization.CultureInfo.InvariantCulture))
             {
-                reader.Read();
-                var objs = reader.GetRecords<Personal>();
-                foreach (var obj in objs)
+                var list = reader.GetRecords<Personal>().ToList();
+                foreach (var obj in list)
                 {
                     WriteLine(obj.Name);
                     WriteLine(obj.SurName);
