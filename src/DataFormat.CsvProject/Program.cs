@@ -15,7 +15,7 @@ namespace DataFormat.CsvProject
     {
         static void Main(string[] args)          
         {
-            string path =  @".\your\path\data.csv";  //
+            string path = @".\your\path\data.csv";  //
             string path2 =  @".\your\path\data2.csv";
 
             WriteCsv(path, new Personal { Id = 1, Name = "Martin", SurName = "Fowler" });
@@ -61,6 +61,22 @@ namespace DataFormat.CsvProject
                     WriteLine(obj.Name);
                     WriteLine(obj.SurName);
 
+            }
+            sr.Close();
+        }
+
+        static void ReadObjectsCsv(string path)
+        {
+            StreamReader sr = new StreamReader(path);
+            using (CsvReader reader = new CsvReader(sr, System.Globalization.CultureInfo.InvariantCulture))
+            {
+                reader.Read();
+                var objs = reader.GetRecords<Personal>();
+                foreach (var obj in objs)
+                {
+                    WriteLine(obj.Name);
+                    WriteLine(obj.SurName);
+                }
             }
             sr.Close();
         }
