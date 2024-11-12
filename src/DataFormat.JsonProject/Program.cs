@@ -14,7 +14,6 @@ namespace DataFormat.JsonProject
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Hello World!");  
             string path = @".\your\path\data.json";
             string path2 = @".\your\path\data2.json";
             WriteJson(new Personal { Id = 1, Name = "Martin", SurName = "Fowler" }, path);
@@ -27,21 +26,24 @@ namespace DataFormat.JsonProject
             ReadJsonObjects(path2);
         }
 
-
+        // Write in a json file
+        // Parameters: Personal personal  and string path
         static void WriteJson(Personal personal,string path)
         {
             var obj = JsonConvert.SerializeObject(personal);
             File.WriteAllText(path, obj);
 
         }
-
+        // Write in a json file
+        // Parameters: List<Personal> personals  and string path
         static void WriteJson(List<Personal> personals, string path)
         {
             var obj = JsonConvert.SerializeObject(personals);
             File.WriteAllText(path, obj);
 
         }
-
+        // Read single object in the json file
+        // Parameter: string path
         static void ReadJson(string path) 
         {
             var stringVal = File.ReadAllText(path);
@@ -50,7 +52,8 @@ namespace DataFormat.JsonProject
             Console.WriteLine(obj.Name);
             Console.WriteLine(obj.SurName);
         }
-
+        // Read objects in the json file
+        // Parameter: string path
         static void ReadJsonObjects(string path)
         {
             var stringVal = File.ReadAllText(path);
