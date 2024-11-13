@@ -71,7 +71,7 @@ namespace DataFormat.CsvProject
             }
             sr.Close();
         }
-        // Read objects in the json file
+        // Read objects in the csv file
         // Parameter: string path
         static void ReadObjectsCsv(string path)
         {
