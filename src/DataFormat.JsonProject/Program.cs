@@ -26,7 +26,7 @@ namespace DataFormat.JsonProject
             ReadJsonObjects(path2);
         }
 
-        // Write in a json file
+        // Write object in a json file
         // Parameters: Personal personal  and string path
         static void WriteJson(Personal personal,string path)
         {
@@ -34,7 +34,7 @@ namespace DataFormat.JsonProject
             File.WriteAllText(path, obj);
 
         }
-        // Write in a json file
+        // Write objects in a json file
         // Parameters: List<Personal> personals  and string path
         static void WriteJson(List<Personal> personals, string path)
         {

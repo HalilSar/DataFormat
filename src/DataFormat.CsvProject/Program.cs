@@ -28,6 +28,8 @@ namespace DataFormat.CsvProject
             ReadObjectsCsv(path2);
         }
 
+        // Write object to a csv file
+        // Parameters: Personal personal  and string path
         static void WriteCsv(string path, Personal personal)
         {
            
@@ -41,7 +43,8 @@ namespace DataFormat.CsvProject
             }
             sw.Close();
         }
-
+        // Write objects in a csv file
+        // Parameters: List<Personal> personals  and string path
         static void WriteObjectsCsv(string path, List<Personal> personals)
         {
             StreamWriter sw = new StreamWriter(path);
@@ -53,7 +56,8 @@ namespace DataFormat.CsvProject
             }
             sw.Close();
         }
-
+        // Read single object in the csv file
+        // Parameter: string path
         static void ReadCsv(string path)
         {
             StreamReader sr = new StreamReader(path);
@@ -67,7 +71,8 @@ namespace DataFormat.CsvProject
             }
             sr.Close();
         }
-
+        // Read objects in the csv file
+        // Parameter: string path
         static void ReadObjectsCsv(string path)
         {
             StreamReader sr = new StreamReader(path);
