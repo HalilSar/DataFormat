@@ -28,6 +28,8 @@ namespace DataFormat.CsvProject
             ReadObjectsCsv(path2);
         }
 
+        // Write object to a csv file
+        // Parameters: Personal personal  and string path
         static void WriteCsv(string path, Personal personal)
         {
            
